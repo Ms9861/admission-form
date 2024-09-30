@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Database Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: rgb(248, 132, 229);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>AL MADAD ISLAMIC EDUCATION ACADEMY</h1>
+            <h1>Student Registration</h1>
+            <form id="record-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="TEXT" id="FATHERNAME" placeholder="FATHERNAME" required>
+                <input type="NUMBER" id="PHONE" placeholder="PHONE" required>
+                <input type="number" id="Aadhar" placeholder="Aadhar" required>
+                <button type="submit">Add Record</button>
+                <input type="hidden" id="edit-index" value="-1">
+            </form>
+        </div>
+        <div class="right">
+            <h2>Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>FATHERNAME</th>
+                        <th>PHONE</th>
+                        <th>Aadhar</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="record-list"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
