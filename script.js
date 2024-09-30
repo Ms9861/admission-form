@@ -2,7 +2,6 @@ const recordForm = document.getElementById('record-form');
 const nameInput = document.getElementById('name');
 const FATHERNAMEInput = document.getElementById('FATHERNAME');
 const PHONEInput = document.getElementById('PHONE');
-const AadharInput = document.getElementById('Aadhar');
 const recordList = document.getElementById('record-list');
 const editIndexInput = document.getElementById('edit-index');
 
@@ -31,7 +30,6 @@ function displayRecords() {
                     <td>${record.name}</td>
                     <td>${record.FATHERNAME}</td>
                     <td>${record.PHONE}</td>
-                    <td>${record.Aadhar}</td>
                     <td><button onclick="editRecord(${index})">Edit</button></td>
                     <td class="deleteButton"><button onclick="deleteRecord(${index})">Delete</button></td>
                 `;
@@ -46,10 +44,9 @@ recordForm.addEventListener('submit', function (e) {
   const name = nameInput.value;
   const FATHERNAME = FATHERNAMEInput.value;
   const PHONE = PHONEInput.value;
-  const Aadhar = AadharInput.value;
   const editIndex = parseInt(editIndexInput.value);
 
-  if (name && FATHERNAME && PHONE && Aadhar ) {
+  if (name && FATHERNAME && PHONE ) {
     if (isDuplicateName(PHONE) && editIndex === -1) {
       alert('Student already exists.');
       return;
@@ -57,10 +54,10 @@ recordForm.addEventListener('submit', function (e) {
 
     if (editIndex === -1) {
       // Add a new record
-      records.push({ name, FATHERNAME, PHONE, Aadhar});
+      records.push({ name, FATHERNAME, PHONE});
     } else {
       // Update an existing record
-      records[editIndex] = { name, FATHERNAME, PHONE, Aadhar };
+      records[editIndex] = { name, FATHERNAME, PHONE };
       editIndexInput.value = -1;
     }
 
@@ -68,7 +65,6 @@ recordForm.addEventListener('submit', function (e) {
     nameInput.value = '';
     FATHERNAMEInput.value = '';
     PHONEInput.value = '';
-    AadharInput.value = '';
     displayRecords();
   }
 });
@@ -79,7 +75,6 @@ function editRecord(index) {
   nameInput.value = recordToEdit.name;
   FATHERNAMEInput.value = recordToEdit.FATHERNAME;
   PHONEInput.value = recordToEdit.PHONE;
-  AadharInput.value = recordToEdit.Aadhar;
   editIndexInput.value = index;
 }
 
