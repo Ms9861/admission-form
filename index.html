@@ -42,18 +42,5 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <script>
-        let Url='https://script.google.com/macros/s/AKfycbzOopzN_ZhLI255WbO7VwSqsYzm1zI4G40cuCiLDvGQZSTFZ5JyCZUHn3MWCvJc8gH4kw/exec'
-        let record-form=document.queryselector('#record-form');
-        record-form.addEventListener("submit",(e)=>{
-            let d=new record-formData(record-form);
-            fetch(url,{
-                method:"Post",
-                body:d
-            }).then((res)=>res.text())
-            .then((finalRes)=>console.log(finalRes))
-            e.preventdefault()
-        })
-    </script>
 </body>
 </html>
